@@ -1,0 +1,12 @@
+plugins {
+    id("connector-conventions")
+}
+
+dependencies {
+    val libs = project.extensions.getByType<org.gradle.api.artifacts.VersionCatalogsExtension>().named("libs")
+    api(project(":connector-core"))
+    implementation(libs.findLibrary("spring-jms").get())
+    implementation(libs.findLibrary("jakarta-jms-api").get())
+    implementation(libs.findLibrary("spring-boot-autoconfigure").get())
+    implementation(libs.findLibrary("spring-boot-starter-actuator").get())
+}

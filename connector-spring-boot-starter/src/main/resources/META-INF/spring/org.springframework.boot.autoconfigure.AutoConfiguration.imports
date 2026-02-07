@@ -1,0 +1,3 @@
+com.example.connector.spring.ConnectorSpringConfiguration
+com.example.connector.server.http.ConnectorServerHttpAutoConfiguration
+com.example.connector.starter.ConnectorActuatorConfiguration

@@ -1,0 +1,65 @@
+[versions]
+agp = "8.7.2"
+gradle = "9.2"
+kotlin = "2.0.21"
+springBoot = "3.4.0"
+springJdbc = "6.2.0"
+resilience4j = "2.2.0"
+opentelemetry = "1.40.0"
+grpc = "1.64.0"
+kafka = "3.7.0"
+jms = "3.1.0"
+spock = "2.4-M4-groovy-4.0"
+groovy = "4.0.21"
+jacoco = "0.8.12"
+junit = "5.10.2"
+
+[libraries]
+# Spring
+spring-boot-gradle-plugin = { group = "org.springframework.boot", name = "spring-boot-gradle-plugin", version.ref = "springBoot" }
+spring-boot-starter = { group = "org.springframework.boot", name = "spring-boot-starter", version.ref = "springBoot" }
+spring-boot-starter-web = { group = "org.springframework.boot", name = "spring-boot-starter-web", version.ref = "springBoot" }
+spring-boot-starter-actuator = { group = "org.springframework.boot", name = "spring-boot-starter-actuator", version.ref = "springBoot" }
+spring-boot-starter-jdbc = { group = "org.springframework.boot", name = "spring-boot-starter-jdbc", version.ref = "springBoot" }
+spring-boot-autoconfigure = { group = "org.springframework.boot", name = "spring-boot-autoconfigure", version.ref = "springBoot" }
+spring-jdbc = { group = "org.springframework", name = "spring-jdbc", version.ref = "springJdbc" }
+spring-context = { group = "org.springframework", name = "spring-context", version.ref = "springJdbc" }
+spring-core = { group = "org.springframework", name = "spring-core", version.ref = "springJdbc" }
+
+# Resilience
+resilience4j-spring-boot3 = { group = "io.github.resilience4j", name = "resilience4j-spring-boot3", version.ref = "resilience4j" }
+
+# OpenTelemetry
+opentelemetry-api = { group = "io.opentelemetry", name = "opentelemetry-api", version.ref = "opentelemetry" }
+opentelemetry-sdk = { group = "io.opentelemetry", name = "opentelemetry-sdk", version.ref = "opentelemetry" }
+
+# gRPC
+grpc-netty-shaded = { group = "io.grpc", name = "grpc-netty-shaded", version.ref = "grpc" }
+grpc-protobuf = { group = "io.grpc", name = "grpc-protobuf", version.ref = "grpc" }
+grpc-stub = { group = "io.grpc", name = "grpc-stub", version.ref = "grpc" }
+
+# Kafka
+kafka-clients = { group = "org.apache.kafka", name = "kafka-clients", version.ref = "kafka" }
+spring-kafka = { group = "org.springframework.kafka", name = "spring-kafka", version = "3.2.0" }
+
+# JMS
+jakarta-jms-api = { group = "jakarta.jms", name = "jakarta.jms-api", version.ref = "jms" }
+spring-jms = { group = "org.springframework", name = "spring-jms", version.ref = "springJdbc" }
+
+# Testing - Spock & Groovy
+spock-core = { group = "org.spockframework", name = "spock-core", version.ref = "spock" }
+spock-spring = { group = "org.spockframework", name = "spock-spring", version.ref = "spock" }
+groovy = { group = "org.apache.groovy", name = "groovy", version.ref = "groovy" }
+junit-jupiter = { group = "org.junit.jupiter", name = "junit-jupiter", version.ref = "junit" }
+
+# Testcontainers (optional)
+testcontainers-junit-jupiter = { group = "org.testcontainers", name = "junit-jupiter", version = "1.19.8" }
+testcontainers-kafka = { group = "org.testcontainers", name = "kafka", version = "1.19.8" }
+
+# H2 for tests
+h2 = { group = "com.h2database", name = "h2", version = "2.2.224" }
+
+[plugins]
+java-library = { id = "java-library", version.ref = "agp" }
+jacoco = { id = "org.jacoco.core", version.ref = "jacoco" }
+spring-boot = { id = "org.springframework.boot", version.ref = "springBoot" }
