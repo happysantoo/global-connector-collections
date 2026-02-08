@@ -11,8 +11,7 @@ JMS (queue: connector-in) → Pipeline (input convert → journal → output con
 ```
 
 - **Inbound:** Messages consumed from JMS queue `connector-in` (embedded Artemis).
-- **Transformation:** **Input converter** (JMS → internal: normalize payload); **output converter** (internal → Kafka: add `[JMS→Kafka] ` prefix). Registered in `JmsToKafkaTransformation`; invoked inside `ConnectorPipeline.process()`.
-- **Pipeline:** Input convert → journal request → output convert → send → journal response. Optional tracing and metrics.
+- **Pipeline:** Each message is journalled (request), then sent to Kafka and journalled (response). Optional tracing (correlation_id in spans) and metrics (received/sent/failed).
 - **Outbound:** Kafka producer with **Resilience4j** (Retry, Bulkhead, RateLimiter) and virtual threads.
 
 ## Non-Functional Requirements Demonstrated
